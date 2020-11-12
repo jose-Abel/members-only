@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to "MEMBERS-ONLY", root_path, class: "navbar-brand", id:"logo" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item <%= 'active' if request.path == posts_path %>">
+        <%= link_to "All Posts", posts_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item <%= 'active' if request.path == new_post_path %>">
+        <%= link_to "New Post", new_post_path, class: "nav-link"%>
+      </li>
+    </ul>
+    <% if current_user %>
+      <div class="nav-item">
+        <%= link_to('Logout', destroy_user_session_path, class: "btn btn-danger logout-button link_class", method: :delete) %>
+      </div>
+    <% else %>
+       <div class="nav-item">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link btn btn-info link_class"%>
+        </div>
+        <div class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link btn btn-info link_class"%>
+        </div>
+    <% end %>
+  </div>
+</nav>
