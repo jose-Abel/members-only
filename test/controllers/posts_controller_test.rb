@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
@@ -5,3 +7,5 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 end
+
+# rubocop : enable Layout/EndOfLine

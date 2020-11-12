@@ -1,5 +1,7 @@
+# rubocop : disable Layout/EndOfLine
+
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: %i[new create]
 
   def new
     @post = Post.new
@@ -10,7 +12,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      flash[:notice] = "Post was created successfully."
+      flash[:notice] = 'Post was created successfully.'
       redirect_to posts_path
     else
       render 'new'
@@ -27,3 +29,5 @@ class PostsController < ApplicationController
     params.require(:post).permit(:body)
   end
 end
+
+# rubocop : enable Layout/EndOfLine

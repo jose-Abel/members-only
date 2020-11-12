@@ -1,5 +1,7 @@
-class PagesController < ApplicationController
+# rubocop : disable Layout/EndOfLine
 
-  def index
-  end
+class PagesController < ApplicationController
+  def index; end
 end
+
+# rubocop : enable Layout/EndOfLine
