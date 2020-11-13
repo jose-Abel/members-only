@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= render "shared/errors", obj: @post %>
+      <%= form_with(model: @post, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+
+        <div class="form-group row">
+          <%= f.label :body, class:"col-2 col-form-label text-light" %>
+          <div class="col-10">
+          <%= f.text_area :body, rows: 10, class:"form-control shadow rounded", placeholder: "Description of post" %>
+          </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit class:"btn btn-outline-light btn-lg" %>
+        </div>  
+
+        <% end %>
+      </div>
+    </div>
+  </div>
