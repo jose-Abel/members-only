@@ -7,9 +7,10 @@
             <p class="card-text"><%= truncate(post.body, length: 100) %></p>
           </div>
           <div class="card-footer text-muted">
-            <% if user_signed_in? %>
-              <div><%= post.user.username %></div>
-            <% end %>
+            <% #if user_signed_in? %>
+            <div><%= username(post) %></div>
+            <% #end %>
+            
             <small> Created <%= time_ago_in_words(post.created_at) %> ago,
               edited <%= time_ago_in_words(post.updated_at) %> ago </small>
             
